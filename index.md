@@ -1,3 +1,5 @@
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
 # My Baby is Awesome!!!!
 ## I Love you baby :)
 
