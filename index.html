@@ -271,9 +271,12 @@ pre[data-line] .line-highlight[data-end]:after {
   background: linear-gradient(rgba(250, 250, 250, 0.5), 50%, lightgrey);
   margin-top: 2em;
 }
+#markdown_md details summary {
+  padding: 0% 1%;
+  padding-bottom: 0.45%;
+}
 #markdown_md details summary h6 {
   display: inline;
-  padding: 3% 0%;
 }
 #markdown_md details {
   border-radius: 2px;
@@ -287,9 +290,15 @@ pre[data-line] .line-highlight[data-end]:after {
   color: black;
   background-color: rgba(98, 163, 228, 0.2);
   margin-bottom: 3%;
+  border-radius: 2px;
 }
 #markdown_md details[open] summary h6 {
   color: black;
+}
+#markdown_md .code-in-table-cell {
+  display: inline;
+  margin: 0%;
+  padding: 3%;
 }
 </style>
 <h1 class="mume-header" id="markdown-cheatsheet-with-examples">Markdown Cheatsheet (with examples)</h1>
@@ -298,7 +307,7 @@ pre[data-line] .line-highlight[data-end]:after {
 <li><a href="#markdown-cheatsheet-with-examples">Markdown Cheatsheet (with examples)</a>
 <ul>
 <li><a href="#headings">Headings</a></li>
-<li><a href="#bold-and-emphasis">bold and emphasis</a></li>
+<li><a href="#bold-and-emphasis">Bold and Emphasis</a></li>
 <li><a href="#code">Code</a>
 <ul>
 <li><a href="#inline-code">Inline Code</a></li>
@@ -327,6 +336,9 @@ pre[data-line] .line-highlight[data-end]:after {
 <h2 class="mume-header" id="headings">Headings</h2>
 
 <p>Prefix your heading by 1-6 x <code>#</code> and a space</p>
+<div>
+<div></div>
+</div>
 <table>
 <thead>
 <tr>
@@ -336,24 +348,24 @@ pre[data-line] .line-highlight[data-end]:after {
 </thead>
 <tbody>
 <tr>
-<td><pre class="language-html"># Heading1</pre></td>
-<td><pre class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>Heading1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span></pre></td>
+<td><pre class="language-html code-in-table-cell"># Heading1</pre></td>
+<td><pre class="language-html code-in-table-cell"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>Heading1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span></pre></td>
 </tr>
 <tr>
-<td><pre class="language-html">## Heading2</pre></td>
-<td><pre class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">&gt;</span></span>Heading2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span></pre></td>
+<td><pre class="language-html code-in-table-cell">## Heading2</pre></td>
+<td><pre class="language-html code-in-table-cell"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">&gt;</span></span>Heading2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span></pre></td>
 </tr>
 <tr>
-<td><code>...</code></td>
+<td><code class="code-in-table-cell">...</code></td>
 <td></td>
 </tr>
 <tr>
-<td><pre class="language-html">###### Heading6</pre></td>
-<td><pre class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h6</span><span class="token punctuation">&gt;</span></span>Heading6<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h6</span><span class="token punctuation">&gt;</span></span></pre></td>
+<td><pre class="language-html code-in-table-cell">###### Heading6</pre></td>
+<td><pre class="language-html code-in-table-cell"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h6</span><span class="token punctuation">&gt;</span></span>Heading6<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h6</span><span class="token punctuation">&gt;</span></span></pre></td>
 </tr>
 </tbody>
 </table>
-<details><summary><h6>Only for <code>&lt;h1&gt;</code> and <code>&lt;h2&gt;</code>, can also use ...</h6></summary>
+<details><summary><h6>Alternate only for <code>&lt;h1&gt;</code> and <code>&lt;h2&gt;</code></h6></summary>
 <pre class="language-text">Heading1
 ========      // only need one =
 Heading2
@@ -366,7 +378,7 @@ Heading2
 </pre>
 <p></p>
 </details>
-<h2 class="mume-header" id="bold-and-emphasis">bold and emphasis</h2>
+<h2 class="mume-header" id="bold-and-emphasis">Bold and Emphasis</h2>
 
 <table>
 <thead>
@@ -377,12 +389,12 @@ Heading2
 </thead>
 <tbody>
 <tr>
-<td><code>_emphasised_</code><br><code>*emphasised*</code></td>
-<td><code>&lt;em&gt;emphasised&lt;/em&gt;</code></td>
+<td><code>_emphasis_</code><br><code>*emphasis*</code></td>
+<td><code>&lt;em&gt;emphasis&lt;/em&gt;</code></td>
 </tr>
 <tr>
 <td><code>__bold__</code><br><code>**bold**</code></td>
-<td><code>&lt;b&gt;bold&lt;/b&gt;</code></td>
+<td><code>&lt;strong&gt;bold&lt;/strong&gt;</code></td>
 </tr>
 </tbody>
 </table>
@@ -400,8 +412,8 @@ Heading2
 </thead>
 <tbody>
 <tr>
-<td><code>my `inline code` here</code></td>
-<td><code>my &lt;code&gt;inline code&lt;/code&gt; here</code></td>
+<td><code>my `inline` code</code></td>
+<td><code>my &lt;code&gt;inline&lt;/code&gt; code</code></td>
 </tr>
 </tbody>
 </table>
@@ -463,17 +475,19 @@ function myFunction() {
 (<code>-|-</code> for two columns, <code>-|-|-</code> for three columns, etc)</li>
 <li>First line without <code>|</code> ends the table</li>
 </ul>
-<details><summary><h6>Example</h6></summary>
-<pre class="language-text">header cell 1         | header cell 2
-----------------------|----------------------
-single `line` content | multi-line&lt;br&gt;content
+<details open=""><summary><h6>Example</h6></summary>
+<pre class="language-text">header cell 1   | header cell 2
+----------------|--------------
+one `line` cell | multi-line&lt;br&gt;cell
 </pre>
-<p>Note:</p>
-<ul>
+<p>
+Note:
+</p><ul>
   <li><code>|</code>'s do not need to line up</li>
   <li>only need <code>-|-</code> for two column table</li>
   <li><code>|</code>'s do not need surrounding spaces</li>
 </ul>
+<p></p>
 <p>produces</p>
 <p>
 </p><pre class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>table</span><span class="token punctuation">&gt;</span></span>
@@ -485,8 +499,8 @@ single `line` content | multi-line&lt;br&gt;content
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>thead</span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tbody</span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">&gt;</span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>single <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>code</span><span class="token punctuation">&gt;</span></span>line<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>code</span><span class="token punctuation">&gt;</span></span> content<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>multi-line<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">&gt;</span></span>content<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>one <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>code</span><span class="token punctuation">&gt;</span></span>line<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>code</span><span class="token punctuation">&gt;</span></span> cell<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>multi-line<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">&gt;</span></span>cell<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tbody</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>table</span><span class="token punctuation">&gt;</span></span>
@@ -503,8 +517,8 @@ single `line` content | multi-line&lt;br&gt;content
   </thead>
   <tbody>
     <tr>
-      <td>single <code>line</code> content</td>
-      <td>multi-line<br>content</td>
+      <td>one <code>line</code> cell</td>
+      <td>multi-line<br>cell</td>
     </tr>
   </tbody>
 </table>
