@@ -475,7 +475,7 @@ function myFunction() {
 (<code>-|-</code> for two columns, <code>-|-|-</code> for three columns, etc)</li>
 <li>First line without <code>|</code> ends the table</li>
 </ul>
-<details open=""><summary><h6>Example</h6></summary>
+<details><summary><h6>Example</h6></summary>
 <pre class="language-text">header cell 1   | header cell 2
 ----------------|--------------
 one `line` cell | multi-line&lt;br&gt;cell
@@ -545,11 +545,12 @@ Instead, use a regular html table in the markdown document.</p>
 <li>
 <p><strong>span level</strong> elements (<code>&lt;span&gt;</code> <code>&lt;cite&gt;</code> <code>&lt;del&gt;</code> etc)</p>
 <ul>
-<li>markdown syntax <strong>is</strong> parsed</li>
+<li>use inline with normal text</li>
+<li>markdown syntax <strong>is</strong> parsed within</li>
 </ul>
 </li>
 </ul>
-<details><summary><h6>Example (notice: the markdown styling 'overides' the <code>&lt;span&gt;</code> element's local styling)</h6></summary>
+<details><summary><h6>Example<br></h6>(notice: the markdown styling 'overides' the <code>&lt;span&gt;</code> element's local styling)</summary>
 <pre class="language-text">Normal &lt;span style="color:blue;"&gt;but **awesome** markdown&lt;/span&gt; paragraph
 &nbsp;
 &lt;table&gt;
@@ -585,8 +586,7 @@ Another normal markdown paragraph
 <h2 class="mume-header" id="escaped-characters">Escaped Characters</h2>
 
 <p>In <strong>HTML</strong>, <code>&lt;</code> and <code>&amp;</code> <strong>must always</strong> be escaped (<code>&amp;lt;</code> and <code>&amp;amp;</code>), otherwise they mess up the parsing of the file.</p>
-<p>In <strong>markdown</strong>, these are <strong>automatically</strong> escaped for you,<br>
-<strong>except</strong> when they are part of an escape sequence like <code>&amp;amp;</code>, <code>&amp;copy;</code> or <code>&amp;#8203;</code> etc</p>
+<p>In <strong>markdown</strong>, these are <strong>automatically</strong> escaped for you, <strong>except</strong> when they are part of an escape sequence like <code>&amp;amp;</code>, <code>&amp;copy;</code> or <code>&amp;#8203;</code> etc</p>
 <h3 class="mume-header" id="escaping-markdown-syntax">Escaping markdown syntax</h3>
 
 <p>To escape markdown syntax, simply prefix with <code>\</code></p>
@@ -612,52 +612,54 @@ Another normal markdown paragraph
 <h2 class="mume-header" id="paragraphs-and-linebreaks">Paragraphs and linebreaks</h2>
 
 <p>Write text on <strong>consecutive</strong> lines <strong>surrounded by blank lines</strong> and it will be enclosed by <code>&lt;p&gt; &lt;/p&gt;</code></p>
-<p>In vanilla markdown, <code>&lt;br&gt;</code>s are only added when you end a line with two or more spaces.<br>
-In Atom's markdown, <code>&lt;br&gt;</code>s are added at the end of <strong>every</strong> line.</p>
+<ul>
+<li>In vanilla markdown, <code>&lt;br&gt;</code>s are only added when you end a line with two or more spaces.</li>
+<li>In Atom's markdown, <code>&lt;br&gt;</code>s are added at the end of <strong>every</strong> line.</li>
+</ul>
 <h2 class="mume-header" id="block-quotes">Block Quotes</h2>
 
 <p><strong>Consecutive lines</strong> prefixed with <code>&gt;</code> will be enclosed by <code>&lt;blockquote&gt; &lt;/blockquote&gt;</code></p>
 <p>All other markup rules can be applied inside blockquotes exactly as they would elsewhere.</p>
 <details><summary><h6>Example</h6></summary>
-<p></p><pre class="language-text">&gt; I showed my boss the `awesome` function I wrote
+<p></p><pre class="language-text">&gt; Gave my boss this `awesome` function
 &gt; ```javascript
 &gt; function awesome() {
 &gt;   releaseMyCats();
 &gt; }
 &gt; ```
 &gt; and my boss replied
-&gt; &gt; You'd better come see
-&gt; &gt; me after your done there
+&gt; &gt; Don't forget an empty line is
+&gt; &gt; required to end the quote block
 &gt;
-&gt; the following empty line ends the quote block
+&gt; next empty line ends the quote block
 </pre><p></p>
 <p>produces</p>
 <pre data-role="" data-info="html" class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>blockquote</span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>I showed my boss the <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>code</span><span class="token punctuation">&gt;</span></span>awesome<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>code</span><span class="token punctuation">&gt;</span></span> function I wrote<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Gave my boss this <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>code</span><span class="token punctuation">&gt;</span></span>awesome<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>code</span><span class="token punctuation">&gt;</span></span> function<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>pre</span> <span class="token attr-name">data-role</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>codeBlock<span class="token punctuation">"</span></span> <span class="token attr-name">data-info</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>javascript<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>language-javascript<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>token keyword<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>function<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>token function<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>awesome<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>token punctuation<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>(<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>token punctuation<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>)<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>token punctuation<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>{<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>token function<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>releaseMyCats<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>token punctuation<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>(<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>token punctuation<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>)<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>token punctuation<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>token punctuation<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>pre</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>and my boss replied<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>blockquote</span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>You'd better come see<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">&gt;</span></span>
-me after your done there<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Don't forget an empty line is<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">&gt;</span></span>
+required to end the quote block<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>blockquote</span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>the following empty line ends the quote block<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>next empty line ends the quote block<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>blockquote</span><span class="token punctuation">&gt;</span></span>
 </pre>
 <p>
 </p><p>which looks like</p>
 <p></p><blockquote>
-<p>I showed my boss the <code>awesome</code> function I wrote</p>
+<p>Gave my boss this <code>awesome</code> function</p>
 <pre class="language-javascript"><span class="token keyword">function</span> <span class="token function">awesome</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token function">releaseMyCats</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </pre><p>and my boss replied</p>
 <blockquote>
-<p>You'd better come see<br>
-me after your done there</p>
+<p>Don't forget an empty line is<br>
+required to end the quote block</p>
 </blockquote>
-<p>the following empty line ends the quote block</p>
+<p>next empty line ends the quote block</p>
 </blockquote><p></p>
 </details>
 <hr>
