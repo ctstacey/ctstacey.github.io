@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html><head>
       <title>markdown</title>
       <meta charset="utf-8">
@@ -278,6 +279,16 @@ pre[data-line] .line-highlight[data-end]:after {
   box-shadow: 1px 1px 2px 0px grey;
   padding: 3px;
 }
+#markdown_md details[open] {
+  background-color: rgba(98, 163, 228, 0.15);
+}
+#markdown_md details[open] summary {
+  color: black;
+  background-color: rgba(98, 163, 228, 0.2);
+}
+#markdown_md details[open] summary h6 {
+  color: black;
+}
 </style>
 <h1 class="mume-header" id="markdown-cheatsheet-with-examples">Markdown Cheatsheet (with examples)</h1>
 
@@ -340,7 +351,7 @@ pre[data-line] .line-highlight[data-end]:after {
 </tr>
 </tbody>
 </table>
-<details><summary><h6>Only for <code>&lt;h1&gt;</code> and <code>&lt;h2&gt;</code>, can also use ...</h6></summary>
+<details open=""><summary><h6>Only for <code>&lt;h1&gt;</code> and <code>&lt;h2&gt;</code>, can also use ...</h6></summary>
 <pre class="language-text">Heading1
 ========      // only need one =
 Heading2
@@ -395,7 +406,7 @@ Heading2
 <h3 class="mume-header" id="blocks-of-code">Blocks of Code</h3>
 
 <p><strong>Indent</strong> block by <strong>4 spaces</strong> and code will be enclosed by <code>&lt;pre&gt;&lt;code&gt; &lt;/code&gt;&lt;/pre&gt;</code></p>
-<details><summary><h6>Example</h6></summary>
+<details open=""><summary><h6>Example</h6></summary>
 <p></p><pre class="language-text">....def function(){
       pass
     }
@@ -418,7 +429,7 @@ Heading2
 
 <p>Atom's <em>Markdown Preview</em> (and <em>Markdown Preview Enhanced</em>) extend this idea by adding <em>code fences</em> with language specified to allow code highlighting (eg <code>```javascript ...```</code>).</p>
 <p>(language defaults to <code>text</code> which looks like regular markdown code block)</p>
-<details><summary><h6>Example</h6></summary>
+<details open=""><summary><h6>Example</h6></summary>
 <pre class="language-text">```javascript
 function myFunction() {
   console.log("hello");
